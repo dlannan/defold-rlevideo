@@ -14,5 +14,5 @@ developer = David Lannan
 publisher = Kakutai Pty Ltd
 
 [library]
-include_dirs = rlevideo tools
+include_dirs = rlevideo,tools
 
