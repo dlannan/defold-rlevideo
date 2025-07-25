@@ -1,0 +1,57 @@
+local video 	= require("rlevideo.lua.rlevideo")
+
+
+function init(self)
+
+	self.vid1 = video.load( "assets/videos/quickstart")
+	self.vid2 = video.load( "assets/videos/replay")
+	self.vid1.curr = 0 
+	self.vid1.time = 0.0
+	self.vid2.curr = 0 
+
+	pprint(self.vid1)
+	video.decode(self.vid1, self.vid1.curr)
+	go.set("/video1#cube", "texture0", self.vid1.tex)
+	video.decode(self.vid2, self.vid1.curr)
+	go.set("/video2#sphere", "texture0", self.vid2.tex)
+	go.set("/video3#quad", "texture0", self.vid2.tex)
+
+	go.animate(".", "euler.y", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 20)
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+
+	if(self.vid1) then 
+		self.vid1.time = self.vid1.time + dt 
+		if(self.vid1.time > 1.0 / self.vid1.fps) then 
+			self.vid1.curr = self.vid1.curr + 1
+			self.vid2.curr = self.vid2.curr + 1
+			--print(self.vid1.curr, self.vid1.time)
+			if(self.vid1.curr > self.vid1.frames -1) then self.vid1.curr = 0 end
+			if(self.vid2.curr > self.vid2.frames -1) then self.vid2.curr = 0 end
+			video.decode(self.vid1, self.vid1.curr)
+			video.decode(self.vid2, self.vid2.curr)
+			self.vid1.time = self.vid1.time - 1.0 / self.vid1.fps
+		end	
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

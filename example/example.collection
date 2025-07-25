@@ -1,0 +1,68 @@
+name: "main"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  children: "video1"
+  children: "video2"
+  children: "video3"
+  data: "components {\n"
+  "  id: \"example\"\n"
+  "  component: \"/example/example.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "camera"
+  data: "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.1\\n"
+  "far_z: 100.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: 5.0
+  }
+}
+embedded_instances {
+  id: "video1"
+  data: "components {\n"
+  "  id: \"cube\"\n"
+  "  component: \"/assets/models/cube.model\"\n"
+  "}\n"
+  ""
+  rotation {
+    z: -0.70710677
+    w: 0.70710677
+  }
+}
+embedded_instances {
+  id: "video2"
+  data: "components {\n"
+  "  id: \"sphere\"\n"
+  "  component: \"/assets/models/sphere.model\"\n"
+  "}\n"
+  ""
+  position {
+    x: 2.0
+  }
+  rotation {
+    z: -0.70710677
+    w: 0.70710677
+  }
+}
+embedded_instances {
+  id: "video3"
+  data: "components {\n"
+  "  id: \"quad\"\n"
+  "  component: \"/assets/models/quad.model\"\n"
+  "}\n"
+  ""
+  position {
+    x: -2.0
+  }
+}
