@@ -2,7 +2,7 @@
 
 ## What this is:
 
-A simple RLE low palette playback library that allows Defold developers to play simple video feeds within a Defold scene. These are mapped to textures so it could be a video on a sprite, or model, etc.
+A simple RLE low palette video playback library that allows Defold developers to play simple video feeds within a Defold scene. These are mapped to textures so it could be a video on a sprite, or model, etc.
 
 ## What this isnt:
 
