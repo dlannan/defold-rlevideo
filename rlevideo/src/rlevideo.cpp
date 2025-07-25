@@ -188,7 +188,6 @@ static void LuaInit(lua_State* L)
 
 static dmExtension::Result AppInitializeRLEVideo(dmExtension::AppParams* params)
 {
-    dmLogInfo("AppInitializeRLEVideo");
     return dmExtension::RESULT_OK;
 }
 
@@ -196,25 +195,21 @@ static dmExtension::Result InitializeRLEVideo(dmExtension::Params* params)
 {
     // Init Lua
     LuaInit(params->m_L);
-    dmLogInfo("Registered %s Extension", MODULE_NAME);
     return dmExtension::RESULT_OK;
 }
 
 static dmExtension::Result AppFinalizeRLEVideo(dmExtension::AppParams* params)
 {
-    dmLogInfo("AppFinalizeRLEVideo");
     return dmExtension::RESULT_OK;
 }
 
 static dmExtension::Result FinalizeRLEVideo(dmExtension::Params* params)
 {
-    dmLogInfo("FinalizeRLEVideo");
     return dmExtension::RESULT_OK;
 }
 
 static dmExtension::Result OnUpdateRLEVideo(dmExtension::Params* params)
 {
-    dmLogInfo("OnUpdateRLEVideo");
     return dmExtension::RESULT_OK;
 }
 
