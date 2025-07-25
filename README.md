@@ -83,6 +83,8 @@ The RLE Data looks like:
 ## Futures
 
 There are a number of improvements that could be made with this. Some of the things I may look at:
+- Threaded decode using Defold Threads on extension side
+- Player controller (play, pause, rewind, goto etc)
 - GPU decoding by loading the rledata as a text into a shader for decode or use compute.
 - Remove the offsets for frames, and have markers (this makes frame movement more annoying, so not sure)
 - Add an audio track
