@@ -58,14 +58,17 @@ I have attempted to make the format as simplistic as possible so that decoding i
 ### Palette format
 
 Array of RGB triples for each palette index. Each element is a uint8_t type (unsigned char byte)
+
 | R1 | G1 | B1 | R2 | G2 | B2 | R3 | G3 | B3 ...
 
 ### RLETex format
 
 The top part of the file is a Header. All elements are uint32_t type.
+
 | width | height | fps | frames | 
 
 A secondary part of the header is a list of the frame offsets for the number of frames 
+
 | frame1_offset | frame2_offset | frame3_offset | frame4_offset | ..... | frame(frames-1)_offset |
 
 The remaining data is RLE packed data. All frames one after the other. 
@@ -74,6 +77,7 @@ First Byte: Run Length
 Second Byte: Palette Index 
 
 The RLE Data looks like:
+
 | RunLen1 | PalIndex1 | RunLen2 | PalIndex2 | RunLen3 | PalIndex3 | RunLen4 | PalIndex4 |...
 
 ## Futures
