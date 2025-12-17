@@ -1,6 +1,5 @@
 local video 	= require("rlevideo.lua.rlevideo")
 
-
 function init(self)
 
 	self.vid1 = video.load( "assets/videos/quickstart")
@@ -10,6 +9,7 @@ function init(self)
 	self.vid2.curr = 0 
 
 	pprint(self.vid1)
+	pprint(self.vid2)
 	video.decode(self.vid1, self.vid1.curr)
 	go.set("/video1#cube", "texture0", self.vid1.tex)
 	video.decode(self.vid2, self.vid1.curr)

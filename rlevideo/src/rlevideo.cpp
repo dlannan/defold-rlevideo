@@ -105,9 +105,7 @@ static int VideoDecode(lua_State *L)
 {
     int vid = luaL_checknumber(L, 1);
     int frameno = luaL_checknumber(L, 2);
-    const char *pal = luaL_checkstring(L, 3);
-    int palsize = luaL_checknumber(L, 4) / 3;
-    dmScript::LuaHBuffer *buffer = dmScript::CheckBuffer(L, 5);
+    dmScript::LuaHBuffer *buffer = dmScript::CheckBuffer(L, 3);
 
     // Get video info 
     VideoInfo info = g_videos[vid];

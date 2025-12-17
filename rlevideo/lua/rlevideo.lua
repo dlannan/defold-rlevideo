@@ -56,7 +56,7 @@ videos.load = function( filename )
         format         = graphics.TEXTURE_FORMAT_RGBA,
         image_buffer   = info.buffer,
     }
-    local new_path = "/imgbuffer_"..string.format("%d", info.id)..".texturec"
+    local new_path = string.format("/imgbuffer_%d.texturec", info.id)
     info.tex = resource.create_texture(new_path, info.tparams)
 
     -- Store info, in case it needs to be fetched 
@@ -68,7 +68,7 @@ end
 
 videos.decode = function( video_info, frame_number )
 
-    rlevideo.videodecode( video_info.id, frame_number, video_info.palette, video_info.palsize, video_info.buffer )
+    rlevideo.videodecode( video_info.id, frame_number, video_info.buffer )
 
     -- Update texture with pixel buffer
     resource.set_texture(video_info.tex, video_info.tparams, video_info.buffer)
