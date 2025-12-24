@@ -2,8 +2,8 @@ local video 	= require("rlevideo.lua.rlevideo")
 
 function init(self)
 
-	self.vid1 = video.load( "assets/videos/quickstart")
-	self.vid2 = video.load( "assets/videos/replay")
+	self.vid1 = video.load( "/assets/videos/quickstart")
+	self.vid2 = video.load( "/assets/videos/replay")
 	self.vid1.curr = 0 
 	self.vid1.time = 0.0
 	self.vid2.curr = 0 

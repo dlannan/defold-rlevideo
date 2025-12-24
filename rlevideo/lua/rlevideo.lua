@@ -22,24 +22,15 @@ videos.load = function( filename )
     local palette = nil
     local rletex = nil
 
-    local fh = io.open(string.format("%s.pal", filename), "rb")
-    if(fh) then 
-        local data = fh:read("*a")
-        if(data) then palette = data end 
-    end
+    palette, palerr = sys.load_resource(string.format("%s.pal", filename), "rb")
+    rletex, rletexerr = sys.load_resource(string.format("%s.rletex", filename), "rb")
 
-    local fh = io.open(string.format("%s.rletex", filename), "rb")
-    if(fh) then 
-        local data = fh:read("*a")
-        if(data) then rletex = data end 
-    end
-
-    if(palette == nil) then 
-        pprint("[Error] Invalid Palette file.")
+    if(palerr) then 
+        pprint(string.format("[Error] Invalid Palette file: %s.", palerr))
         return nil
     end
     if(rletex == nil) then 
-        pprint("[Error] Invalid RLE Data file.")
+        pprint(string.format("[Error] Invalid RLE Data file: %s.", rletexerr))
         return nil
     end
 

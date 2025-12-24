@@ -12,6 +12,8 @@ height = 640
 title = rlevideo
 developer = David Lannan
 publisher = Kakutai Pty Ltd
+bundle_resources = 
+custom_resources = /assets/videos
 
 [library]
 include_dirs = rlevideo
